@@ -1,0 +1,14 @@
+body{
+background-color:lightBlue
+}
+
+div{
+margin:20px;
+display:flex;
+justify-content:space-around;
+align-items:center
+}
+
+ul{
+width:250px;
+}
