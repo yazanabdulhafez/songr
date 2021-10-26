@@ -1,6 +1,6 @@
 package com.ASAC.songr;
 
-import Models.Albums;
+import com.ASAC.songr.Models.Albums;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 

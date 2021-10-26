@@ -40,3 +40,14 @@ you can run the app and test it on the browser.
   * albums(Model model)
   * helloWorld(@RequestParam("name") String name)
   * welcomeToHome(Model model)
+
+## lab 12
+
+### AlbumController
+
+modifiy this controller to accept data from post method using @RequestParam.
+
+* Routers:
+
+1. @GetMapping("/albums")
+2. @PostMapping("/addAlbum")
