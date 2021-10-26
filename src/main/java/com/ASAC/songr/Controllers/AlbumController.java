@@ -18,6 +18,12 @@ public class AlbumController {
     @Autowired
     AlbumRepository albumRepository;
 
+    @GetMapping
+    public String errorhandler(){
+      return "error";
+    }
+
+
     @GetMapping("/albums")
     public String albums(Model model){
         model.addAttribute("albums" ,albumRepository.findAll());
@@ -33,9 +39,14 @@ public class AlbumController {
                                  @RequestParam(value="songCount") int songCount,
                                  @RequestParam(value="length") int length,
                                  @RequestParam(value="imageUrl") String imageUrl){
-      Albums albums=new Albums(title,artist,songCount,length,imageUrl);
-              albumRepository.save(albums);
-        return new RedirectView("/albums");
+        try {
+            Albums albums = new Albums(title, artist, songCount, length, imageUrl);
+            albumRepository.save(albums);
+            return new RedirectView("/albums");
+        } catch (Exception exception){
+        System.out.println(exception);
+        return new RedirectView("/error");
+    }
     }
 
     @GetMapping("/addAlbumsForm")
@@ -47,9 +58,13 @@ public class AlbumController {
 
     @PostMapping("/addAlbumsForm")
     public String addAlbumsForm(@ModelAttribute Albums albums, Model model) {
+        try {
         albumRepository.save(albums);
         model.addAttribute("albums", albums);
         return "result";
+    } catch (Exception exception){
+        return "error";
+    }
     }
 
     /*
