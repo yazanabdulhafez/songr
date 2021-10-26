@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+<h1>Result</h1>
+<p th:text="'Album Title: ' + ${albums.title}"></p>
+<p th:text="'Artist Name: ' + ${albums.artist}"></p>
+<p th:text="'Songs Number: ' + ${albums.songCount}"></p>
+<p th:text="'Album length in seconds: ' + ${albums.length}"></p>
+<img th:src="${albums.getImageUrl}"  ><br><br>
+<a href="/addAlbumsForm">Submit another Album</a>
+</body>
+</html>

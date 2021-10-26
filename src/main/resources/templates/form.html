@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>form</title>
+</head>
+<body>
+
+<h1>Form</h1>
+<form action="#" th:action="@{/addAlbumsForm}" th:object="${albums}" method="post">
+    <p>Title of Album: <input type="text" th:field="*{title}" /></p>
+    <p>Artist of Album: <input type="text" th:field="*{artist}" /></p>
+    <p>Number of Songs <input type="text" th:field="*{songCount}" /></p>
+    <p>Length in seconds <input type="text" th:field="*{length}" /></p>
+    <p>Image URL <input type="text" th:field="*{imageUrl}" /></p>
+    <p><input type="submit" value="Add Album" /> </p>
+    <br>
+    <br>
+    <a href="/">Home</a>
+</form>
+</body>
+</html>

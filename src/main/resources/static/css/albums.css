@@ -2,6 +2,16 @@ body{
 background-color:lightBlue
 }
 
+header{
+display:flex;
+justify-content:space-between;
+align-items:center
+}
+a{
+text-decoration:none;
+margin-left:20px;
+}
+
 div{
 margin:20px;
 display:flex;

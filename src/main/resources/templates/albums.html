@@ -9,6 +9,13 @@
     <link rel="stylesheet" th:href="@{css/albums.css}">
 </head>
 <body>
+<header>
+    <h1>Songer Apllication</h1>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/addAlbumsForm">Add New Album</a>
+    </nav>
+</header>
 <h1>This Is The Most Famous Albums List</h1>
 <div th:each="albums :${albums}">
     <img th:src="${albums.getImageUrl}">

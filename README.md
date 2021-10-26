@@ -46,8 +46,21 @@ you can run the app and test it on the browser.
 ### AlbumController
 
 modifiy this controller to accept data from post method using @RequestParam.
+and allow the user to enter and store new albums using a form.
 
 * Routers:
 
 1. @GetMapping("/albums")
 2. @PostMapping("/addAlbum")
+3. @GetMapping("/addAlbumsForm")
+4. @PostMapping("/addAlbumsForm")
+
+### How To Run
+
+1. open a command line interface
+2. clone the repo and build project
+3. cd into the songr directory
+4. run postgres database by pgstart
+5. run: ./gradlew bootRun
+6. open a browser and type localhost:8080 as the URL
+7. try the different endpoints
