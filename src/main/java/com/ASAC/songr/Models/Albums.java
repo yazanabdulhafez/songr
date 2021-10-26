@@ -1,4 +1,12 @@
-package Models;
+package com.ASAC.songr.Models;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+
+@Entity
 
 public class Albums {
     /*
@@ -7,6 +15,9 @@ public class Albums {
      */
 
     //variables
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private String title;
     private String artist;
     private int songCount;
@@ -24,6 +35,16 @@ public class Albums {
 
 
     //Getters and Setters
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getTitle() {
         return title;
     }
