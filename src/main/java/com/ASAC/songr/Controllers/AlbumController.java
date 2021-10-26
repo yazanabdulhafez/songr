@@ -9,6 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
+import java.util.ArrayList;
+
 
 @Controller
 public class AlbumController {
@@ -22,18 +24,42 @@ public class AlbumController {
         return "albums";
     }
 
-    @RequestMapping(value="/addAlbum", method = RequestMethod.POST)
-//    @PostMapping("/addAlbum") // this should be a post.
+
+
+    @RequestMapping(value = "/addAlbums", method = {RequestMethod.GET, RequestMethod.POST})
+
     public RedirectView addAlbum(@RequestParam(value= "title") String title ,
                                  @RequestParam(value= "artist") String artist,
                                  @RequestParam(value="songCount") int songCount,
                                  @RequestParam(value="length") int length,
                                  @RequestParam(value="imageUrl") String imageUrl){
-        Albums albums=new Albums(title,artist,songCount,length,imageUrl);
-
-        albumRepository.save(albums);
+      Albums albums=new Albums(title,artist,songCount,length,imageUrl);
+              albumRepository.save(albums);
         return new RedirectView("/albums");
     }
+
+    @GetMapping("/addAlbumsForm")
+    public String albumForm(Model model) {
+        model.addAttribute("albums", new Albums());
+        return "form";
+    }
+
+
+    @PostMapping("/addAlbumsForm")
+    public String addAlbumsForm(@ModelAttribute Albums albums, Model model) {
+        albumRepository.save(albums);
+        model.addAttribute("albums", albums);
+        return "result";
+    }
+
+    /*
+@RequestParam(value= "title") String title ,
+                                 @RequestParam(value= "artist") String artist,
+                                 @RequestParam(value="songCount") int songCount,
+                                 @RequestParam(value="length") int length,
+                                 @RequestParam(value="imageUrl") String imageUrl){
+        Albums albums=new Albums(title,artist,songCount,length,imageUrl
+ */
 
     /*
       ArrayList<Albums> albums=new ArrayList<>();

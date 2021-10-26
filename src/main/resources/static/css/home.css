@@ -2,11 +2,32 @@
 body{
 background-color:#EFB7B7;
 }
-h1{
-font-size:50px;
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center
+}
+a{
+text-decoration:none;
+margin-left:20px;
 }
 
-p{
+h1{
+font-size:25px;
+}
+
+p nth:child(1){
 color:red;
-font-size:30px;
+font-size:15px;
+}
+
+footer{
+width:100%;
+display:flex;
+justify-content:center;
+height:50px;
+position:absolute;
+left:0;
+bottom:0;
 }

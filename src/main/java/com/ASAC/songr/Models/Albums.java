@@ -24,6 +24,9 @@ public class Albums {
     private int length;
     private String imageUrl;
 
+    public Albums(){
+
+    }
     //constructor
     public Albums(String title, String artist, int songCount, int length, String imageUrl) {
         this.title = title;
@@ -86,7 +89,7 @@ public class Albums {
     }
 
 
-    //to String methhod
+    //to String method
     @Override
     public String toString() {
         return "Albums{" +
