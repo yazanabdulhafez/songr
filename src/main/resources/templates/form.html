@@ -13,8 +13,8 @@
 <form action="#" th:action="@{/addAlbumsForm}" th:object="${albums}" method="post">
     <p>Title of Album: <input type="text" th:field="*{title}" /></p>
     <p>Artist of Album: <input type="text" th:field="*{artist}" /></p>
-    <p>Number of Songs <input type="text" th:field="*{songCount}" /></p>
-    <p>Length in seconds <input type="text" th:field="*{length}" /></p>
+    <p>Number of Songs <input type="number" th:field="*{songCount}" /></p>
+    <p>Length in seconds <input type="number" th:field="*{length}" /></p>
     <p>Image URL <input type="text" th:field="*{imageUrl}" /></p>
     <p><input type="submit" value="Add Album" /> </p>
     <br>

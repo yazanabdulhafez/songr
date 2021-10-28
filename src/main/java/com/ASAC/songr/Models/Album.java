@@ -1,14 +1,12 @@
 package com.ASAC.songr.Models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
 
-public class Albums {
+public class Album {
     /*
     This is a class represent a model that contain:
     title, an artist, a songCount, a length (in seconds), and an imageUrl
@@ -24,11 +22,14 @@ public class Albums {
     private int length;
     private String imageUrl;
 
-    public Albums(){
+    @OneToMany(mappedBy = "album")//the object in Song class that mapped
+    private List<Song> songs;
+
+    public Album(){
 
     }
     //constructor
-    public Albums(String title, String artist, int songCount, int length, String imageUrl) {
+    public Album(String title, String artist, int songCount, int length, String imageUrl) {
         this.title = title;
         this.artist = artist;
         this.songCount = songCount;
@@ -88,6 +89,13 @@ public class Albums {
         this.imageUrl = imageUrl;
     }
 
+    public List<Song> getSongs() {
+        return songs;
+    }
+
+    public void setSongs(List<Song> songs) {
+        this.songs = songs;
+    }
 
     //to String method
     @Override
