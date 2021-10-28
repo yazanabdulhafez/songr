@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>oneAlbum</title>
+</head>
+<body>
+<div class="form">
+    <h1>Add New Song</h1>
+    <br />
+    <form action="#" th:action="@{/addSongsForm}" th:object="${songs}" method="post">
+<!--        <input type="hidden" field="*{id}" name="id" th:value="${songs.id}" />-->
+        <br />
+        <p>Song title: <input type="text" th:field="*{title}" name="title" required /></p>
+        <br />
+        <p>Song length: <input type="number" th:field="*{length}" name="length" required /></p>
+        <br />
+        <p>Track number: <input type="number" min="1" th:field="*{trackNumber}" name="trackNumber" required /></p>
+        <br />
+        <p>Submit <input type="submit" value="Submit" /></p>
+        <br />
+    </form>
+</div>
+
+<div class="albumDiv" th:each="album :${albums}">
+    <p>Album title :<span th:text="${album.getTitle}"></span></p>
+    <p>Artist Name :<span th:text="${album.getArtist}"></span></p>
+    <p>Number of songs :<span th:text="${album.getSongCount}"></span></p>
+    <p>Total length :<span th:text="${album.getLength}"></span></p>
+    <img th:src="${album.imageUrl}" />
+</div>
+
+<div class="songsHolder">
+    <div th:each="song : ${songs}" class="oneSong">
+        <p>Song title :<span th:text="${song.title}"></span></p>
+        <p>Song length :<span th:text="${song.length}"></span></p>
+        <p>Track number :<span th:text="${song.trackNumber}"></span></p>
+    </div>
+</div>
+</body>
+</html>

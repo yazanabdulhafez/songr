@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Songs</title>
+</head>
+<body>
+<header>
+    <nav>
+        <a href="http://localhost:8080">Home</a>
+        <a href="http://localhost:8080/albums">Browse albums</a>
+    </nav>
+    <h1>Our Song collection</h1>
+</header>
+<main>
+    <div class="songHolder">
+        <div th:each="song : ${songs}" class="oneSong">
+            <p>Song title :<span th:text="${song.title}"></span></p>
+            <p>Song length :<span th:text="${song.length}"></span></p>
+            <p>Track number :<span th:text="${song.trackNumber}"></span></p>
+<!--            <p>Album name :<span th:text="${song.albums.title}"></span></p>-->
+
+        </div>
+    </div>
+</main>
+</body>
+</html>

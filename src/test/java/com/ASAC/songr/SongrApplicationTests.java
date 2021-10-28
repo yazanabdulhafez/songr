@@ -1,6 +1,6 @@
 package com.ASAC.songr;
 
-import com.ASAC.songr.Models.Albums;
+import com.ASAC.songr.Models.Album;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -17,9 +17,9 @@ class SongrApplicationTests {
     @Test
     public void albumClassTest() {
         String imageUrl = "http://www.popvortex.com/images/album-covers/whte-album-the-beatles.jpg";
-        Albums testAlbum = new Albums("White Album", "The Beatles", 30, 5613, imageUrl);
+        Album testAlbum = new Album("White Album", "The Beatles", 30, 5613, imageUrl);
         //test for the constructor
-        assertTrue(testAlbum instanceof Albums);
+        assertTrue(testAlbum instanceof Album);
         testAlbum.setArtist("Kazem Al Saher");
         testAlbum.setTitle("Al Rasm Bel Kalemat");
         testAlbum.setSongCount(9);
