@@ -1,25 +1,42 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
 body{
 background-color:#EFB7B7;
 }
 
-header{
-display:flex;
-justify-content:space-between;
-align-items:center
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background:#e9c46a;
+  height:100px;
+  width:100%;
+  font-family: 'Anton', sans-serif;
 }
 a{
 text-decoration:none;
 margin-left:20px;
+margin-right:20px;
+font-size:20px;
+font-family: 'Anton', sans-serif;
+}
+a:hover{
+background:violet;
 }
 
 h1{
+margin-left:10px;
 font-size:25px;
+font-family: 'Anton', sans-serif;
 }
 
-p nth:child(1){
-color:red;
-font-size:15px;
+
+p{
+margin:20px;
+font-family: 'Anton', sans-serif;
+font-size:20px;
+line-height:2.5;
 }
 
 footer{

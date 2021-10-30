@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home</title>
+    <link rel="stylesheet" th:href="@{/css/reset.css}">
     <link rel="stylesheet" th:href="@{css/home.css}">
 
 </head>
@@ -13,12 +14,10 @@
 <header>
     <h1>Songer Apllication</h1>
     <nav  >
-        <a href="/addAlbumsForm">Add New Album</a>
         <a href="/albums">All Albums</a>
     </nav>
 </header>
 <main>
-<h1>Welcome to our Home page</h1>
 <p th:text="${text}"></p>
     <p>This project is about using Spring Boot to create<br>
         an backend application,and in this lab we create<br>

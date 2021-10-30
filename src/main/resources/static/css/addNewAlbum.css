@@ -1,0 +1,39 @@
+body{
+background-color:#e76f51;
+
+}
+
+header h1{
+font-size:30px;
+margin-left:20px;
+}
+
+nav a{
+font-size:20px;
+margin:20px;
+text-decoration:none;
+}
+
+nav a:hover{
+background-color:violet;
+}
+
+header{
+background-color:#b5838d;
+height:100px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+
+footer{
+font-size:25px;
+width:100%;
+display:flex;
+justify-content:center;
+height:50px;
+position:absolute;
+left:0;
+bottom:0;
+}

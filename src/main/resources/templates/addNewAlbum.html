@@ -5,11 +5,22 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>form</title>
+    <title>addNewAlbum</title>
+    <link rel="stylesheet" th:href="@{/css/reset.css}">
+    <link rel="stylesheet" th:href="@{/css/addNewAlbum.css}">
 </head>
 <body>
-
+<header>
+    <h1>Songer Apllication</h1>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/albums">Back to Albums</a>
+    </nav>
+</header>
+<main>
 <h1>Form</h1>
+<fieldset>
+<legend>Add New Album</legend>
 <form action="#" th:action="@{/addAlbumsForm}" th:object="${albums}" method="post">
     <p>Title of Album: <input type="text" th:field="*{title}" /></p>
     <p>Artist of Album: <input type="text" th:field="*{artist}" /></p>
@@ -19,7 +30,12 @@
     <p><input type="submit" value="Add Album" /> </p>
     <br>
     <br>
-    <a href="/">Home</a>
 </form>
+
+</fieldset>
+</main>
+<footer>
+    <p>All rights reserved &copy;2021</p>
+</footer>
 </body>
 </html>

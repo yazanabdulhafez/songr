@@ -57,7 +57,7 @@ public class AlbumController {
     @GetMapping("/addAlbumsForm")
     public String albumForm(Model model) {
         model.addAttribute("albums", new Album());
-        return "form";
+        return "addNewAlbum";
     }
 
 
@@ -75,11 +75,12 @@ public class AlbumController {
     @GetMapping("/oneAlbum")
     public String getOneAlbum(@RequestParam Integer id , Model model){
         Album albumToShow = albumRepository.findById(id).get();
-        model.addAttribute("album" , albumToShow);
+        model.addAttribute("albums" , albumToShow);
         List<Song> albumSongs = songsRepository.findAllByAlbum(albumToShow);
         model.addAttribute("songs" , albumSongs);
-        return "oneAlbum.html";
+        return "oneAlbum";
     }
+
 
     /*
 @RequestParam(value= "title") String title ,

@@ -1,6 +1,7 @@
 package com.ASAC.songr;
 
 import com.ASAC.songr.Models.Album;
+import com.ASAC.songr.Models.Song;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -35,8 +36,32 @@ class SongrApplicationTests {
         //test for length in seconds
         assertEquals(3063, testAlbum.getLength());
         //test for image url
-		String testUrl="http://melody4arab.com/music/iraq/kadim_al_sahir/al_rasm_bel_kalemat/Al-Rasm-Bel-Kalemat.jpg";
+        String testUrl = "http://melody4arab.com/music/iraq/kadim_al_sahir/al_rasm_bel_kalemat/Al-Rasm-Bel-Kalemat.jpg";
         assertEquals(testUrl, testAlbum.getImageUrl());
+    }
+//	 Test Songs Class
+        @Test
+        public void songConstructor() {
+
+            Album testAlbum=new Album();
+            Song testSong = new Song("Kazem Al Saher", 3063, 9, testAlbum);
+
+            /* Test Constructor */
+            assertTrue(testSong instanceof Song);
+
+            /* Test title setter and getter */
+            testSong.setTitle("newSong");
+            assertEquals("newSong", testSong.getTitle());
+
+            /* Test artist setter and getter */
+            testSong.setLength(3063);
+            assertEquals(3063, testSong.getLength());
+
+            /* Test number of songs setter and getter */
+            testSong.setTrackNumber(9);
+            assertEquals(9, testSong.getTrackNumber());
+
+
     }
 
 }
