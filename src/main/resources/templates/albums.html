@@ -1,31 +1,39 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Albums</title>
-    <link rel="stylesheet" th:href="@{css/albums.css}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Albums</title>
+  <link rel="stylesheet" th:href="@{/css/reset.css}">
+  <link rel="stylesheet" th:href="@{/css/albums.css}">
 </head>
+
 <body>
-<header>
+  <header>
     <h1>Songer Apllication</h1>
     <nav>
-        <a href="/">Home</a>
-        <a href="/addAlbumsForm">Add New Album</a>
+      <a href="/">Home</a>
+      <a href="/addAlbumsForm">Add New Album</a>
+
     </nav>
-</header>
-<h1>This Is The Most Famous Albums List</h1>
-<div th:each="albums :${albums}">
+  </header>
+  <main>
+  <h1>This Is The Most Famous Albums List</h1>
+  <div th:each="albums :${albums}">
     <img th:src="${albums.getImageUrl}">
     <ul>
-        <li>Album Title: <span th:text="${albums.getTitle}"></span></li>
-        <li>Artist: <span th:text="${albums.getArtist}"></span></li>
-        <li> Number of songs: <span th:text="${albums.getSongCount}"></span></li>
-        <li>Album length in seconds: <span th:text="${albums.getLength}"></span></li>
+      <li>Album Title: <span th:text="${albums.getTitle}"></span></li>
+      <li>Artist: <span th:text="${albums.getArtist}"></span></li>
+      <li> Number of songs: <span th:text="${albums.getSongCount}"></span></li>
+      <li>Album length in seconds: <span th:text="${albums.getLength}"></span></li>
     </ul>
+    <button> <a th:href="@{/oneAlbum(id=${albums.id})}">show Album</a></button>
+    <button> <a th:href="@{/deleteAlbum(id=${albums.id})}">delete Album</a></button>
+  </div>
+  </main>
 
-</div>
 </body>
+
 </html>
